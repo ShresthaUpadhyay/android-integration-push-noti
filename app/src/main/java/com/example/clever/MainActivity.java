@@ -2,6 +2,7 @@ package com.example.clever;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
 
 import com.clevertap.android.sdk.CleverTapAPI;
@@ -40,6 +41,8 @@ public class MainActivity extends android.app.Activity {
         prodViewedAction.put("Date", new java.util.Date());
 
         clevertapDefaultInstance.pushEvent("Product viewed", prodViewedAction);
+
+        CleverTapAPI.createNotificationChannel(getApplicationContext(),"hi","Shrestha","push notification done.",NotificationManager.IMPORTANCE_MAX,true);
 
     }
 
